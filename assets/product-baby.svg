@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="420" viewBox="0 0 640 420" role="img" aria-labelledby="t">
+  <title id="t">Product baby</title>
+  <rect width="640" height="420" fill="#fff5cc" />
+  <circle cx="320" cy="175" r="90" fill="#ffb703" opacity="0.85" />
+  <circle cx="295" cy="165" r="10" fill="#0d1b2a" />
+  <circle cx="345" cy="165" r="10" fill="#0d1b2a" />
+  <path d="M286 210c10 15 22 22 34 22 12 0 24-7 34-22" stroke="#0d1b2a" stroke-width="8" fill="none" stroke-linecap="round" />
+</svg>

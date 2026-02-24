@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="220" height="220" viewBox="0 0 220 220" role="img" aria-label="grain texture">
+  <defs>
+    <pattern id="p" width="22" height="22" patternUnits="userSpaceOnUse">
+      <circle cx="3" cy="4" r="1" fill="#ffffff" fill-opacity="0.12" />
+      <circle cx="12" cy="8" r="1" fill="#ffffff" fill-opacity="0.08" />
+      <circle cx="19" cy="14" r="1" fill="#ffffff" fill-opacity="0.14" />
+      <circle cx="7" cy="18" r="1" fill="#ffffff" fill-opacity="0.1" />
+      <path d="M0 11h22" stroke="#ffffff" stroke-opacity="0.04" stroke-width="1" />
+    </pattern>
+  </defs>
+  <rect width="220" height="220" fill="url(#p)" />
+</svg>

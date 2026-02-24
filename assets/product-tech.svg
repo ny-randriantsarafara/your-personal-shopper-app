@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="420" viewBox="0 0 640 420" role="img" aria-labelledby="t">
+  <title id="t">Product tech</title>
+  <rect width="640" height="420" fill="#dff3ff" />
+  <rect x="170" y="110" width="300" height="200" rx="30" fill="#0b3c5d" />
+  <circle cx="260" cy="210" r="30" fill="#ffffff" opacity="0.9" />
+  <circle cx="380" cy="210" r="30" fill="#ffffff" opacity="0.9" />
+  <rect x="236" y="305" width="168" height="26" rx="13" fill="#2a6f97" />
+</svg>

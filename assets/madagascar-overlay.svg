@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="280" height="280" viewBox="0 0 280 280" role="img" aria-labelledby="title">
+  <title id="title">Madagascar map overlay</title>
+  <rect width="280" height="280" rx="20" fill="#f9f4ef" />
+  <path d="M167 34c-16 9-34 32-39 48-7 22-2 42 9 60 7 11 14 21 15 33 1 14-6 25-14 35-9 11-19 22-22 37-2 13 4 22 14 28 17 10 39 6 52-9 13-16 16-41 18-61 2-19 3-38 9-56 6-18 16-34 18-53 1-16-6-37-22-45-12-6-28-5-38 3z" fill="#fb8500" />
+  <circle cx="98" cy="198" r="7" fill="#0b3c5d" />
+  <text x="22" y="248" font-family="Arial, sans-serif" font-size="22" fill="#0b3c5d">Madagascar</text>
+</svg>

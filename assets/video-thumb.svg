@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700" role="img" aria-labelledby="title">
+  <title id="title">Video thumbnail placeholder</title>
+  <rect width="1200" height="700" fill="#0b3c5d" />
+  <rect x="80" y="80" width="1040" height="540" rx="30" fill="#ffffff" opacity="0.09" />
+  <circle cx="600" cy="350" r="100" fill="#fb8500" />
+  <polygon points="570,300 570,400 655,350" fill="#ffffff" />
+  <text x="90" y="650" font-family="Arial, sans-serif" font-size="42" fill="#ffffff">Commande reelle - apercu video</text>
+</svg>

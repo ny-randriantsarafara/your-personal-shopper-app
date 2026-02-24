@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="420" viewBox="0 0 640 420" role="img" aria-labelledby="t">
+  <title id="t">Product shoes</title>
+  <rect width="640" height="420" fill="#eceaff" />
+  <path d="M120 260h210c40 0 90 15 110 40H120z" fill="#3d348b" />
+  <path d="M280 220c12 24 22 34 50 40" stroke="#3d348b" stroke-width="16" fill="none" stroke-linecap="round" />
+  <circle cx="180" cy="308" r="12" fill="#fff" />
+  <circle cx="230" cy="308" r="12" fill="#fff" />
+</svg>
