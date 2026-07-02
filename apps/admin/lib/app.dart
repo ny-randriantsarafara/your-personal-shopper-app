@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'shared/theme/app_colors.dart';
+
 class AdminApp extends StatelessWidget {
   const AdminApp({super.key});
 
@@ -8,8 +10,17 @@ class AdminApp extends StatelessWidget {
     return MaterialApp(
       title: 'Personal Shopper Admin',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xFF111113)),
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: AppColors.foreground,
+          surface: AppColors.background,
+        ),
+        scaffoldBackgroundColor: AppColors.background,
         useMaterial3: true,
+      ).copyWith(
+        textTheme: ThemeData.light().textTheme.apply(
+          bodyColor: AppColors.foreground,
+          displayColor: AppColors.foreground,
+        ),
       ),
       home: const AdminDashboardScreen(),
     );
