@@ -7,8 +7,12 @@ import {
 export class PaymentService {
   constructor(private readonly providers: PaymentProvider[]) {}
 
-  async createIntent(input: CreatePaymentIntentInput): Promise<PaymentIntentResult> {
-    const provider = this.providers.find((candidate) => candidate.providerCode === input.providerCode);
+  async createIntent(
+    input: CreatePaymentIntentInput,
+  ): Promise<PaymentIntentResult> {
+    const provider = this.providers.find(
+      (candidate) => candidate.providerCode === input.providerCode,
+    );
 
     if (!provider) {
       throw new Error(`Unsupported payment provider: ${input.providerCode}`);

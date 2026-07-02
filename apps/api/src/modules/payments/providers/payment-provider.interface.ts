@@ -1,8 +1,5 @@
 export type PaymentProviderCode =
-  | 'MVOLA'
-  | 'ORANGE_MONEY'
-  | 'AIRTEL_MONEY'
-  | 'MANUAL_MOBILE_MONEY';
+  'MVOLA' | 'ORANGE_MONEY' | 'AIRTEL_MONEY' | 'MANUAL_MOBILE_MONEY';
 
 export type PaymentIntentStatus =
   | 'pending'
@@ -29,5 +26,7 @@ export interface PaymentIntentResult {
 
 export interface PaymentProvider {
   providerCode: PaymentProviderCode;
-  createPaymentIntent(input: CreatePaymentIntentInput): Promise<PaymentIntentResult>;
+  createPaymentIntent(
+    input: CreatePaymentIntentInput,
+  ): Promise<PaymentIntentResult>;
 }
