@@ -1,0 +1,10 @@
+{
+  "name": "@personal-shopper/design-tokens",
+  "private": true,
+  "version": "0.1.0",
+  "scripts": {
+    "build": "node -e \"JSON.parse(require('fs').readFileSync('tokens.json', 'utf8')); console.log('tokens ok')\"",
+    "lint": "pnpm build",
+    "test": "pnpm build"
+  }
+}
