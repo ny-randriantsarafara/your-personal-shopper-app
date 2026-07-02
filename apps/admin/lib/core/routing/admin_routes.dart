@@ -1,6 +1,7 @@
 import 'package:go_router/go_router.dart';
 
 import '../../features/dashboard/admin_overview_screen.dart';
+import '../../features/shopper/shopper_tasks_screen.dart';
 import '../../shared/layout/admin_shell.dart';
 
 /// Builds the admin app router. All staff workspaces (overview, shopper,
@@ -17,6 +18,11 @@ GoRouter createAdminRouter() {
             path: '/',
             pageBuilder: (context, state) =>
                 const NoTransitionPage(child: AdminOverviewScreen()),
+          ),
+          GoRoute(
+            path: '/shopper',
+            pageBuilder: (context, state) =>
+                const NoTransitionPage(child: ShopperTasksScreen()),
           ),
         ],
       ),
