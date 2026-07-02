@@ -1,12 +1,13 @@
-import 'package:flutter_test/flutter_test.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
-
 import 'package:admin/app.dart';
+import 'package:flutter_test/flutter_test.dart';
 
 void main() {
-  testWidgets('admin app renders its foundation shell', (WidgetTester tester) async {
-    await tester.pumpWidget(const ProviderScope(child: AdminApp()));
+  testWidgets('admin app renders the neutral brand in its header', (
+    tester,
+  ) async {
+    await tester.pumpWidget(const AdminApp());
+    await tester.pumpAndSettle();
 
-    expect(find.text('Admin app foundation'), findsOneWidget);
+    expect(find.text('Personal Shopper Admin'), findsOneWidget);
   });
 }

@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 
+import 'core/routing/admin_routes.dart';
 import 'shared/theme/app_colors.dart';
 
 class AdminApp extends StatelessWidget {
@@ -7,7 +10,23 @@ class AdminApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const ProviderScope(child: _AdminAppView());
+  }
+}
+
+class _AdminAppView extends ConsumerStatefulWidget {
+  const _AdminAppView();
+
+  @override
+  ConsumerState<_AdminAppView> createState() => _AdminAppViewState();
+}
+
+class _AdminAppViewState extends ConsumerState<_AdminAppView> {
+  late final GoRouter _router = createAdminRouter();
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp.router(
       title: 'Personal Shopper Admin',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(
@@ -22,22 +41,7 @@ class AdminApp extends StatelessWidget {
           displayColor: AppColors.foreground,
         ),
       ),
-      home: const AdminDashboardScreen(),
-    );
-  }
-}
-
-class AdminDashboardScreen extends StatelessWidget {
-  const AdminDashboardScreen({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const Scaffold(
-      body: SafeArea(
-        child: Center(
-          child: Text('Admin app foundation'),
-        ),
-      ),
+      routerConfig: _router,
     );
   }
 }
