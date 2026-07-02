@@ -1,12 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class CustomerApp extends StatelessWidget {
+import 'core/config/workspace_config_provider.dart';
+
+class CustomerApp extends ConsumerWidget {
   const CustomerApp({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final config = ref.watch(workspaceConfigProvider);
+
     return MaterialApp(
-      title: 'Personal Shopper',
+      title: config.publicName,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xFF111113)),
         useMaterial3: true,
