@@ -12,3 +12,9 @@ For each screen:
 - Add screenshot/golden tests only for screens where visual fidelity matters enough to justify maintenance.
 
 Do not copy real shopper-specific names into reusable product source.
+
+## Current 1:1 source map
+
+Use `docs/design-source/reference-screens/README.md` as the source-to-Flutter screen map.
+
+Customer app receives customer-only screens. Admin app receives admin, shopper, logistics, quote creation, workspace switching, and settings screens.
