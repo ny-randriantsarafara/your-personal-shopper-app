@@ -1,6 +1,7 @@
 import 'package:go_router/go_router.dart';
 
 import '../../features/dashboard/admin_overview_screen.dart';
+import '../../features/quotes/quote_create_screen.dart';
 import '../../features/shopper/shopper_tasks_screen.dart';
 import '../../shared/layout/admin_shell.dart';
 
@@ -23,6 +24,14 @@ GoRouter createAdminRouter() {
             path: '/shopper',
             pageBuilder: (context, state) =>
                 const NoTransitionPage(child: ShopperTasksScreen()),
+          ),
+          GoRoute(
+            path: '/quotes/:requestId/create',
+            pageBuilder: (context, state) => NoTransitionPage(
+              child: QuoteCreateScreen(
+                requestId: state.pathParameters['requestId']!,
+              ),
+            ),
           ),
         ],
       ),
