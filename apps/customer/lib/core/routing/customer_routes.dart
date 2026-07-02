@@ -1,6 +1,7 @@
 import 'package:go_router/go_router.dart';
 
 import '../../features/orders/orders_dashboard_screen.dart';
+import '../../features/payments/payment_screen.dart';
 import '../../features/quotes/quote_review_screen.dart';
 import '../../features/requests/new_request_screen.dart';
 import '../../shared/layout/customer_shell.dart';
@@ -29,6 +30,14 @@ GoRouter createCustomerRouter() {
             path: '/quotes/:requestId',
             pageBuilder: (context, state) => NoTransitionPage(
               child: QuoteReviewScreen(
+                requestId: state.pathParameters['requestId']!,
+              ),
+            ),
+          ),
+          GoRoute(
+            path: '/payments/:requestId',
+            pageBuilder: (context, state) => NoTransitionPage(
+              child: PaymentScreen(
                 requestId: state.pathParameters['requestId']!,
               ),
             ),
