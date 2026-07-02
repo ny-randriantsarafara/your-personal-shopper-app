@@ -1,0 +1,59 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Workspace {
+  id          String   @id @default(cuid())
+  slug        String   @unique
+  publicName  String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  members     WorkspaceMember[]
+  settings    WorkspaceSettings?
+}
+
+model User {
+  id          String   @id @default(cuid())
+  phone       String?  @unique
+  email       String?  @unique
+  displayName String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  memberships WorkspaceMember[]
+}
+
+model WorkspaceMember {
+  id          String   @id @default(cuid())
+  workspaceId String
+  userId      String
+  role        String
+  permissions String[]
+  createdAt   DateTime @default(now())
+
+  workspace   Workspace @relation(fields: [workspaceId], references: [id])
+  user        User      @relation(fields: [userId], references: [id])
+
+  @@unique([workspaceId, userId])
+}
+
+model WorkspaceSettings {
+  id                   String   @id @default(cuid())
+  workspaceId          String   @unique
+  logoUrl              String?
+  primaryColor         String?
+  supportPhone         String?
+  whatsappPhone        String?
+  defaultLanguage      String   @default("fr")
+  enabledPaymentMethods String[]
+  createdAt            DateTime @default(now())
+  updatedAt            DateTime @updatedAt
+
+  workspace            Workspace @relation(fields: [workspaceId], references: [id])
+}
