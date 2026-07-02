@@ -28,6 +28,7 @@ class _AdminAppViewState extends ConsumerState<_AdminAppView> {
   Widget build(BuildContext context) {
     return MaterialApp.router(
       title: 'Personal Shopper Admin',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(
           seedColor: AppColors.foreground,

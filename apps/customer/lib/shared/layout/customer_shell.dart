@@ -71,13 +71,17 @@ class _CustomerHeader extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(width: 12),
-                  Text(
-                    brand,
-                    style: const TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.w600,
-                      letterSpacing: -0.5,
-                      color: AppColors.foreground,
+                  Flexible(
+                    child: Text(
+                      brand,
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                      style: const TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.w600,
+                        letterSpacing: -0.5,
+                        color: AppColors.foreground,
+                      ),
                     ),
                   ),
                 ],

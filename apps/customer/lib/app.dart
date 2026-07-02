@@ -31,6 +31,7 @@ class _CustomerAppViewState extends ConsumerState<_CustomerAppView> {
 
     return MaterialApp.router(
       title: config.publicName,
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(
           seedColor: AppColors.foreground,
