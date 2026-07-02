@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 import '../../features/dashboard/admin_overview_screen.dart';
 import '../../features/logistics/logistics_hub_screen.dart';
 import '../../features/quotes/quote_create_screen.dart';
+import '../../features/settings/account_settings_screen.dart';
 import '../../features/shopper/shopper_tasks_screen.dart';
 import '../../shared/layout/admin_shell.dart';
 
@@ -30,6 +31,11 @@ GoRouter createAdminRouter() {
             path: '/logistics',
             pageBuilder: (context, state) =>
                 const NoTransitionPage(child: LogisticsHubScreen()),
+          ),
+          GoRoute(
+            path: '/settings',
+            pageBuilder: (context, state) =>
+                const NoTransitionPage(child: AccountSettingsScreen()),
           ),
           GoRoute(
             path: '/quotes/:requestId/create',

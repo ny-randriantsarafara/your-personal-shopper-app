@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../shared/format/number_format.dart';
+import '../../shared/motion/staggered_entry.dart';
 import '../../shared/theme/app_colors.dart';
 import '../../shared/widgets/app_button.dart';
 import '../../shared/widgets/status_badge.dart';
@@ -36,14 +37,17 @@ class OrdersDashboardScreen extends ConsumerWidget {
             if (actionRequired.isNotEmpty) ...[
               const _SectionLabel('Needs Your Attention'),
               const SizedBox(height: 16),
-              for (final request in actionRequired) ...[
-                OrderCard(
-                  request: request,
-                  highlighted: true,
-                  trailing: _AttentionTrailing(
+              for (final (index, request) in actionRequired.indexed) ...[
+                StaggeredEntry(
+                  index: index,
+                  child: OrderCard(
                     request: request,
-                    onReviewAndPay: () =>
-                        context.go('/quotes/${request.id}'),
+                    highlighted: true,
+                    trailing: _AttentionTrailing(
+                      request: request,
+                      onReviewAndPay: () =>
+                          context.go('/quotes/${request.id}'),
+                    ),
                   ),
                 ),
                 const SizedBox(height: 16),
@@ -54,11 +58,14 @@ class OrdersDashboardScreen extends ConsumerWidget {
               const _SectionLabel('Active & Past Orders'),
               const SizedBox(height: 16),
             ],
-            for (final request in otherRequests) ...[
-              OrderCard(
-                request: request,
-                showTracking: true,
-                trailing: _StandardTrailing(request: request),
+            for (final (index, request) in otherRequests.indexed) ...[
+              StaggeredEntry(
+                index: actionRequired.length + index,
+                child: OrderCard(
+                  request: request,
+                  showTracking: true,
+                  trailing: _StandardTrailing(request: request),
+                ),
               ),
               const SizedBox(height: 16),
             ],

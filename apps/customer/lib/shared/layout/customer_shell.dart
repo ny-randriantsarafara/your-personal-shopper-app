@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../core/config/workspace_config_provider.dart';
+import '../motion/page_transition.dart';
 import '../theme/app_colors.dart';
 
 /// App chrome for the customer experience: a sticky-feeling top header carrying
@@ -24,7 +25,10 @@ class CustomerShell extends ConsumerWidget {
           Expanded(
             child: SingleChildScrollView(
               padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 28),
-              child: child,
+              child: PageFadeSlideTransition(
+                key: ValueKey(child.runtimeType),
+                child: child,
+              ),
             ),
           ),
         ],

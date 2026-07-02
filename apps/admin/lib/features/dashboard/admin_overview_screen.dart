@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../shared/format/number_format.dart';
+import '../../shared/motion/staggered_entry.dart';
 import '../../shared/theme/app_colors.dart';
 import '../../shared/widgets/status_badge.dart';
 import '../requests/admin_request_controller.dart';
@@ -83,8 +84,11 @@ class AdminOverviewScreen extends ConsumerWidget {
               ),
             ),
             const SizedBox(height: 20),
-            for (final request in requests) ...[
-              _PlatformRequestRow(request: request),
+            for (final (index, request) in requests.indexed) ...[
+              StaggeredEntry(
+                index: index,
+                child: _PlatformRequestRow(request: request),
+              ),
               const SizedBox(height: 16),
             ],
           ],

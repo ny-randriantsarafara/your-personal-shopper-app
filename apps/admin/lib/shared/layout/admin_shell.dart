@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../motion/page_transition.dart';
 import '../theme/app_colors.dart';
 import 'workspace_switcher.dart';
 
@@ -20,7 +21,10 @@ class AdminShell extends StatelessWidget {
           Expanded(
             child: SingleChildScrollView(
               padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 28),
-              child: child,
+              child: PageFadeSlideTransition(
+                key: ValueKey(child.runtimeType),
+                child: child,
+              ),
             ),
           ),
         ],
